@@ -1,18 +1,26 @@
-import axios from "axios";
+import { useEffect } from "react";
 import { useStateContext } from "../../context/NewsContext";
+import { Card } from "../Card";
+import { Search } from "../Search";
+import { fetchNews } from "./fetchNews";
 
 export const NewsPage: React.FC = () => {
-  axios
-    .get(
-      "https://newsapi.org/v2/top-headlines?country=us&category=technology&page=2&apiKey=d5af6414892b4ab4a3ab063a05968552"
-    )
-    .then((res) => res)
-    .then((res) => {
-      console.log(res);
-    });
+  const { searchTerm, setSearchTerm, articleItems, setArticleItems } =
+    useStateContext();
+
+  useEffect(() => {
+    if (searchTerm && searchTerm !== "") {
+      fetchNews(searchTerm).then((articles) => setArticleItems(articles));
+    }
+  }, [searchTerm]);
+
   return (
     <div>
-      <h1>News</h1>
+      <h1>Enter a term to see results</h1>
+      <Search onSearch={setSearchTerm} />
+      {articleItems.map((article) => (
+        <Card {...article} />
+      ))}
     </div>
   );
 };
