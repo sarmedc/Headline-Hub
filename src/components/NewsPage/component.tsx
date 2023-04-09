@@ -16,11 +16,15 @@ export const NewsPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Enter a term to see results</h1>
-      <Search onSearch={setSearchTerm} />
-      {articleItems.map((article) => (
-        <Card {...article} />
-      ))}
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="m-2">Enter a term to see results</h1>
+        <Search onSearch={setSearchTerm} />
+      </div>
+      <div className="grid grid-flow-row grid-cols-1 grid-rows-auto gap-6 m-7">
+        {articleItems.map((article) => (
+          <Card {...article} />
+        ))}
+      </div>
     </div>
   );
 };

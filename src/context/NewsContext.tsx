@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -21,8 +21,6 @@ interface StateContextProps {
   setArticleItems: React.Dispatch<React.SetStateAction<Article[]>>;
   searchTerm: string;
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
-  // onAdd: (product: Product, quantity: number) => void;
-  // onRemove: (product: Product) => void;
 }
 
 const Context = createContext<StateContextProps>({} as StateContextProps);

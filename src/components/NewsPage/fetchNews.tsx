@@ -18,7 +18,7 @@ type NewsApiResponse = {
 
 export async function fetchNews(searchTerm: string): Promise<Article[]> {
   const response: AxiosResponse<NewsApiResponse> = await axios.get(
-    "https://newsapi.org/v2/everything?language=en&pageSize=1&q=" +
+    "https://newsapi.org/v2/everything?language=en&q=" +
       searchTerm +
       "&apiKey=d5af6414892b4ab4a3ab063a05968552"
   );
