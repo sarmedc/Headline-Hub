@@ -21,7 +21,7 @@ export const Card: React.FC<Article> = ({
             alt={"Image Unavailable"}
             height="100px"
             width="300px"
-            className=""
+            className="hidden md:block"
           />
           <div className="card-body flex flex-col h-full justify-between mx-3 my-2">
             <h5 className="card-title font-semibold text-base ">{title}</h5>
