@@ -4,7 +4,7 @@ import { StateContext } from "./context/NewsContext";
 
 function App() {
   return (
-    <div className="App bg-[#fffbff] text-[#1c1c16] font-sans min-h-screen">
+    <div className="App bg-[#fffbff] dark:bg-[#1c1c16] text-[#1c1c16] dark:text-[#e6e2d9] font-sans min-h-screen">
       <StateContext>
         <Header />
         <NewsPage h-full />

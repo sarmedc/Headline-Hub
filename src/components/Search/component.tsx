@@ -25,7 +25,7 @@ export const Search: React.FC<Props> = ({ onSearch }) => {
         value={query}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-        className="w-full h-10 px-3 rounded-full text-sm border border-[#7a7769]"
+        className="w-full h-10 px-3 rounded-full shadow-md text-sm border dark:text-[#000] border-[#7a7769] dark:border-[#949181]"
       />
     </div>
   );

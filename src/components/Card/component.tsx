@@ -10,7 +10,7 @@ export const Card: React.FC<Article> = ({
   content,
 }) => {
   return (
-    <div className="card border">
+    <div className="card border shadow-lg rounded-lg">
       <a href={url} target="_blank" rel="noopener noreferrer" className="">
         <div className="flex flex-row">
           <img
