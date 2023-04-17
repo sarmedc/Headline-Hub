@@ -17,6 +17,8 @@ export interface Article {
 interface StateContextProps {
   isDarkMode: boolean;
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
   articleItems: Article[];
   setArticleItems: React.Dispatch<React.SetStateAction<Article[]>>;
   searchTerm: string;
@@ -27,6 +29,7 @@ const Context = createContext<StateContextProps>({} as StateContextProps);
 
 export const StateContext = ({ children }: Props) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [page, setPage] = useState(0);
   const [articleItems, setArticleItems] = useState<Article[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -35,6 +38,8 @@ export const StateContext = ({ children }: Props) => {
       value={{
         isDarkMode,
         setIsDarkMode,
+        page,
+        setPage,
         articleItems,
         setArticleItems,
         searchTerm,
